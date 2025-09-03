@@ -92,7 +92,7 @@ No grading. No Google Forms. Just instant results — and everything saved in on
 
 **Prompt:**
 
-> Create a quiz app that asks: ‘What is the moment at midspan for a simply supported beam of 6 m with a 4 kN/m uniform load?’ The student should enter their CCID and answer. The correct answer is –72 kNm. Award 1 mark if the answer is correct. Append the CCID, answer, and score to this Google Sheet: https://docs.google.com/spreadsheets/d/xxxxxxxxxxxxxxxx
+> Create a quiz app that asks: ‘What is the moment at midspan for a simply supported beam of 6 m with a 4 kN/m uniform load?’ The student should enter their CCID and answer. The correct answer is 18 kNm. Award 1 mark if the answer is correct. Append the CCID, answer, and score to this Google Sheet: https://docs.google.com/spreadsheets/d/xxxxxxxxxxxxxxxx
 
 <div style={{width: "100%", height: "600px", overflow: "hidden"}}>
 <iframe src='https://mecsimcalc.com/app/5698085/simply_supported_beam_midspan_moment_quiz' style={{position:"relative", left:"-45px", top:"-48px"}} width="100%" height="600" title="MecSimCalc" frameBorder="0"></iframe>
@@ -107,7 +107,7 @@ Instant quiz. Automatic grading. Results saved.
 
 **Prompt:**
 
-> Create a quiz app that asks: ‘A projectile is launched at 25 m/s at an angle of 40°. What is the maximum height it reaches?’ The student enters their CCID and answer. The correct answer is 12.9 m. Award 1 mark if correct. Append the result to this sheet: [Google Sheet link].
+> Create a quiz app that asks: ‘A projectile is launched at 25 m/s at an angle of 40°. What is the maximum height it reaches?’ The student enters their CCID and answer. The correct answer is 13.2m. Award 1 mark if correct. Append the result to this sheet: [Google Sheet link].
 
 <div style={{width: "100%", height: "600px", overflow: "hidden"}}>
 <iframe src='https://mecsimcalc.com/app/2893542/projectile_motion_maximum_height_quiz' style={{position:"relative", left:"-45px", top:"-48px"}} width="100%" height="600" title="MecSimCalc" frameBorder="0"></iframe>
