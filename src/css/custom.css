@@ -28,12 +28,54 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 .navbar {
-  background-color: #333333;
-  padding: 0px 24px;
-  height: 48px;
+  background-color: #1f1f1f;
+  padding: 0 24px;
+  height: 64px;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
+  box-shadow: none;
 }
 .navbar__inner {
-  height: 48px;
+  height: 64px;
+}
+
+@media (min-width: 997px) {
+  .navbar__items--left {
+    flex: 1;
+    justify-content: center;
+    gap: 56px;
+  }
+
+  .navbar__items--left .navbar__item {
+    margin: 0;
+  }
+}
+
+.navbar__brand {
+  margin-right: 0;
+}
+
+.navbar__logo {
+  height: 32px;
+}
+
+.navbar__link {
+  color: rgba(255, 255, 255, 0.88);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: #ffffff;
+}
+
+.navbar__toggle {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.navbar-sidebar {
+  background: #1f1f1f;
 }

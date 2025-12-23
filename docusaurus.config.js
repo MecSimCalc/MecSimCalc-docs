@@ -6,6 +6,10 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
+const algoliaAppId = process.env.ALGOLIA_APP_ID;
+const algoliaApiKey = process.env.ALGOLIA_API_KEY;
+const hasAlgolia = Boolean(algoliaAppId && algoliaApiKey);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "MecSimCalc Docs",
@@ -59,49 +63,53 @@ const config = {
           href: "https://mecsimcalc.com/",
           target: "_self",
           style: {
-            width: "92px",
-            height: "28px",
-            margin: "2px 8px",
+            height: "32px",
+            width: "auto",
+            margin: "0 20px 0 0",
           },
         },
         items: [
           {
-            label: "EXPLORE",
-            to: "https://mecsimcalc.com/explore/",
+            label: "CREATE",
+            href: "https://mecsimcalc.com/create/",
             position: "left",
             target: "_self",
           },
           {
             label: "SEARCH",
-            to: "https://mecsimcalc.com/search/",
+            href: "https://mecsimcalc.com/search/",
             position: "left",
             target: "_self",
           },
           {
-            label: "CREATE",
-            to: "https://mecsimcalc.com/create/",
+            label: "RESOURCES",
             position: "left",
-            target: "_self",
+            items: [
+              {
+                type: "doc",
+                docId: "home",
+                label: "DOCS",
+              },
+              { label: "BLOG", to: "blog" },
+              {
+                label: "COMMUNITY",
+                href: "https://community.mecsimcalc.com/",
+                target: "_self",
+              },
+              {
+                label: "EXPLORE",
+                href: "https://mecsimcalc.com/explore/",
+                target: "_self",
+              },
+            ],
           },
-          {
-            type: "doc",
-            docId: "home",
-            label: "DOCS",
-            position: "left",
-          },
-          {
-            label: "COMMUNITY",
-            to: "https://community.mecsimcalc.com/",
-            position: "left",
-            target: "_self",
-          },
-          { label: "BLOG", to: "blog", position: "left" },
           {
             label: "PRICING",
-            to: "https://mecsimcalc.com/pricing/",
+            href: "https://mecsimcalc.com/pricing/",
             position: "left",
             target: "_self",
           },
+          ...(hasAlgolia ? [{ type: "search", position: "right" }] : []),
         ],
       },
       footer: {
@@ -162,11 +170,11 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       // https://docsearch.algolia.com/docs/legacy/run-your-own/
-      ...(process.env.NODE_ENV === "production"
+      ...(hasAlgolia
         ? {
             algolia: {
-              appId: process.env.ALGOLIA_APP_ID, // The application ID provided by Algolia
-              apiKey: process.env.ALGOLIA_API_KEY, // Public API key: it is safe to commit it
+              appId: algoliaAppId, // The application ID provided by Algolia
+              apiKey: algoliaApiKey, // Public API key: it is safe to commit it
               indexName: "MecSimCalc-docs",
               contextualSearch: true,
             },
